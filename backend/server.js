@@ -21,11 +21,10 @@ app.use('/tasks', taskRoutes);
   res.json({ message: 'Task Management API is running!' });
 }); */
 // Serve React build
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// Catch-all route (React routing)
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
 });
 
 // Connect to MongoDB and start server
